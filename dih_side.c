@@ -18,7 +18,6 @@ main(){
 	while((fscanf(fp,"%lf %lf",&n[i],&s[i])) != EOF){
 		i++;
 	}
-
 	fclose(fp);
 
 	sum_cyn = 0;
