@@ -4,8 +4,8 @@ main(){
 	FILE *fp;
 	char *fname = "dih_side.txt";
 	double n[10000],s[10000];
-	double sum_cyn,sum_anti;
-	double ave_cyn,ave_anti;
+	double sum_syn,sum_anti;
+	double ave_syn,ave_anti;
 	int i;
 
 	fp = fopen(fname,"r");
@@ -20,12 +20,12 @@ main(){
 	}
 	fclose(fp);
 
-	sum_cyn = 0;
+	sum_syn = 0;
 	sum_anti = 0;
 
 	for(i = 0;i < 10000;i++){
 		if(-90.00 < s[i] && s[i] < 90.00){
-			sum_cyn++;
+			sum_syn++;
 		}else if(-180.00 < s[i] && s[i] < -90.00){
 			sum_anti++;
 		}else if(90.00 < s[i] && s[i] < 180.00){
@@ -33,10 +33,10 @@ main(){
 		}
 	}
 
-	ave_cyn = sum_cyn / 10000.00;
+	ave_syn = sum_syn / 10000.00;
 	ave_anti = sum_anti / 10000.00;
 
-	printf("ave_cyn = %lf\nave_anti = %lf\n",ave_cyn,ave_anti);
+	printf("ave_syn = %lf\nave_anti = %lf\n",ave_syn,ave_anti);
 
 	return 0;
 }
