@@ -4,15 +4,15 @@
 double error(double *x){
 	double sum,a,n,dif;
 	int i;
-
+	sum = 0.0;
 	for(i = 0;i < 20;i++){
 		sum += x[i];
 	}
 	a = sum / 20.0;
 
-	n = 0;
+	n = 0.0;
 	for(i = 0;i < 20;i++){
-		n += pow(x[i] - a,2.0);
+		n += pow(x[i] - a,2);
 	}
 
 	dif = n / 19.0;
@@ -26,7 +26,6 @@ main(){
 	double sum_syn,sum_anti;
 	double sam_syn,sam_anti;
 	double ave_syn,ave_anti;
-	double error_syn,error_anti;
 	double x[50],y[50];
 	int i,j,p;
 
@@ -42,16 +41,17 @@ main(){
 	}
 	fclose(fp);
 
+	sum_syn = 0;
+	sum_anti = 0;
 	j = 0;
+	p = 0;
 	for(i = 0;i < 20;i++){
 		sam_syn = 0;
 		sam_anti = 0;
 		for(;j < p + 500;j++){
 			if(-90.00 < s[j] && s[j] < 90.00){
 				sam_syn++;
-			}else if(-180.00 < s[j] && s[j] < -90.00){
-				sam_anti++;
-			}else if(90.00 < s[j] && s[j] < 180.00){
+			}else{
 				sam_anti++;
 			}
 		}
@@ -59,16 +59,14 @@ main(){
 		sum_anti += sam_anti;
 		x[i] = sam_syn / 500.0;
 		y[i] = sam_anti / 500.0;
+		printf("x[%d] = %lf y[%d] = %lf\n",i,x[i],i,y[i]);
 		p = j;
 	}
 
 	ave_syn = sum_syn / 10000.0;
 	ave_anti = sum_anti / 10000.0;
 
-	error_syn = error(x);
-	error_anti = error(y);
-
-	printf("ave_syn = %lf +-%lf\nave_anti = %lf +-%lf\n",ave_syn,error_syn,ave_anti,error_anti);
+	printf("ave_syn = %lf +-%lf\nave_anti= %lf +-%lf\n",ave_syn,error(x),ave_anti,error(y));
 
 	return 0;
 }
