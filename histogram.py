@@ -1,26 +1,24 @@
-#coding: UTF-8
-
-def max(x):#最大値の取得
+def max(x):
     max = x[0]
     for i in range(1,10001):
         if max < x[i]:
             max = x[i]
     return max
 
-def min(x):#最小値の取得
+def min(x):
     min = x[0]
     for i in range(1,10001):
         if min > x[i]:
             min = x[i]
     return min
 
-x = input('Read line : ')#読み込む行の指定
-n = input('Step size : ')#ヒストグラムの刻み幅の指定
+x = input('Read line : ')
+n = input('Step size : ')
 t = 10001
 data = t*[0]
 i = 0
 fname = "ener0.xvg"
-for f in open(fname,"r"):#ファイル読み込み
+for f in open(fname,"r"):
     ener = f.split()
     data[i] = float(ener[x])
     i += 1
@@ -28,7 +26,7 @@ for f in open(fname,"r"):#ファイル読み込み
 max = max(data)
 min = min(data)
 
-fname2 = raw_input("What's the name of the output file? : ")#出力ファイルの指定
+fname2 = raw_input("What's the name of the output file? : ")
 f = open(fname2,"w")
 j = 0
 hist = 10000*[0]
@@ -38,9 +36,9 @@ while hmin <= max:
     for i in range(10001):
         if hmin <= data[i] < hmax:
             hist[j] += 1
-    f.write(str(hist[j]) + "\n")#出力ファイルへの書き込み
+    f.write(str(hmin) + " " +str(hist[j]) + "\n")
     hmin += n
     hmax += n
     j += 1
 
-print "\n" + fname2 + " was generated!"
+print "\n" + fname2 + " has been made!"
