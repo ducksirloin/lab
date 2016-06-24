@@ -14,6 +14,10 @@
   nmropt=1
 /
 &wt
-  type='END'
+  type='TEMP0', istep1=0, istep2=100000,
+  value1=800, value2=5000.
+/
+&wt
+  type='END'.
 /
 DISANG=ang.1.RST
