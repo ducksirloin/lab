@@ -10,7 +10,7 @@
   nscm=10, gamma_ln=1.0, ntwr=1000,
   ioutfm=0, ntpr=10,
   ntr=1, RESTRAINT_WT=1000.0,
-  RESTRAINTMASK=':1-19,21-28',
+  RESTRAINTMASK=':1-18,21-28',
   nmropt=1
 /
 &wt
