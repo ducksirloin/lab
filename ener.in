@@ -2,18 +2,16 @@
 &cntrl
   imin=0, ntx=1,
   ntwx=10, nstlim=100000,
-  dt=0.001, tempi=800, temp0=5000,
-  ntt=3,tautp=0.2, ig=-1,
+  dt=0.001, tempi=800, temp0=2000,
+  ntt=4, tautp=0.2, ig=-1,
   ntc=2, ntf=2, cut=999,
-  rgbmax=999, ntb=0, igb=5,
+  rgbmax=999, ntb=0,
   saltcon=0.0, nrespa=1, tol=0.000001,
-  nscm=10, gamma_ln=1.0, ntwr=1000,
+  nscm=10, ntwr=1000,
   ioutfm=0, ntpr=10,
-  ntr=1, RESTRAINT_WT=1000.0,
-  RESTRAINTMASK=':1-19,21-28',
-  nmropt=1
+  ibelly=1, bellymask=':2@HE2',
 /
 &wt
-  type='END'
+  type='END',
 /
-DISANG=ang.1.RST
+DISANG=ang.RST
