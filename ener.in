@@ -3,15 +3,30 @@
   imin=0, ntx=1,
   ntwx=10, nstlim=100000,
   dt=0.001, tempi=800, temp0=2000,
+<<<<<<< HEAD
   ntt=4, tautp=0.2, ig=-1,
+=======
+  ntt=3,tautp=0.2, ig=-1,
+>>>>>>> c77786cc6c064573284b16d6caa412c77b8c2a7e
   ntc=2, ntf=2, cut=999,
   rgbmax=999, ntb=0,
   saltcon=0.0, nrespa=1, tol=0.000001,
   nscm=10, ntwr=1000,
   ioutfm=0, ntpr=10,
+<<<<<<< HEAD
   ibelly=1, bellymask=':2@HE2',
 /
 &wt
+=======
+  ntr=1, RESTRAINT_WT=500.0,
+  RESTRAINTMASK=':1-19, 21-28',
+  nmropt=1,
+/
+&wt
+  type='DUMPFREQ', istep1=0,
+/
+&wt
+>>>>>>> c77786cc6c064573284b16d6caa412c77b8c2a7e
   type='END',
 /
 DISANG=ang.RST
