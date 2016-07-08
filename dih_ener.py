@@ -30,6 +30,6 @@ for i in range(0,72):
 f = open("dih_ener.txt","w")
 ang = -180
 for i in range(0,72):
-    f.write(str(ang) + " " + str(dih_ener[i]) + "\n")
+    f.write(str(ang) + " " + str(sum_ene[i]) + "\n")
     ang += 5
 f.close()
