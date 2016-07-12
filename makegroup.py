@@ -1,5 +1,5 @@
-fname = "groupfile.txt"
+fname = "groupfile.sh"
 f = open(fname,"w")
-f.write("#The group file for 360 pattern MD"+ "\n")
+f.write("#!/bin/sh"+ "\n")
 for i in range(0,361):
-	f.write("-O -i mdin.ener -c confamb" + str(i) + ".inpcrd -p confamb" + str(i) + ".prmtop -o dih_ener" + str(i) + ".out -r dih_ener"+ str(i) + ".restrt -x dih_ener"+ str(i) + ".mdcrd" + "\n")
+	f.write("sander -O -i ener.in -c confamb" + str(i) + ".inpcrd -p confamb" + str(i) + ".prmtop -o dih_ener" + str(i) + ".out -r dih_ener"+ str(i) + ".restrt -x dih_ener"+ str(i) + ".mdcrd" + "\n")
