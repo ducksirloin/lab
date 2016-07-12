@@ -16,5 +16,6 @@ for i in range(0,361):
 fname3 = "grep.sh"
 f = open(fname3,"w")
 f.write("#!/bin/sh"+ "\n")
-for i in range(0,361):
+f.write("grep -A4 -m1 NSTEP dih_ener0.out > allout.txt" + "\n")
+for i in range(1,361):
 	f.write("grep -A4 -m1 NSTEP dih_ener" + str(i) + ".out >> allout.txt" + "\n")
