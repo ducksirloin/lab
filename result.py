@@ -37,10 +37,10 @@ for f in open(fname,"r"):
         elif x[i] == "DIHED":
             f5.write(str(ang[4]) + " " + str(x[i+2]) + "\n")
             ang[4] += 1
-        elif x[i] == "1-4NB":
+        elif x[i] == "NB":
             f6.write(str(ang[5]) + " " + str(x[i+2]) + "\n")
             ang[5] += 1
-        elif x[i] == "1-4EEL":
+        elif x[i] == "EEL":
             f7.write(str(ang[6]) + " " + str(x[i+2]) + "\n")
             ang[6] += 1
         elif x[i] == "VDWAALS":
