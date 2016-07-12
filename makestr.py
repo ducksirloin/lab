@@ -1,5 +1,6 @@
 fname = "strfile.txt"
 f = open(fname,"w")
+f.write("set default PBradii mbondi2" + "\n")
 a = -180
 for i in range(0,361):
 	f.write("str" + str(i) + " = sequence{ACE GLH NME}" + "\n")
