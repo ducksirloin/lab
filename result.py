@@ -105,3 +105,13 @@ f.write("dih  Etot    EPtot   BOND   ANGLE  DIHED   1-4NB  1-4EEL  VDWAALS  EELE
 for i in range(0,361):
     f.write(str(a) + " " + str(Etot[i]) + " " + str(EPtot[i]) + " " + str(BOND[i]) + " " + str(ANGLE[i]) + " " + str(DIHED[i]) + " " + str(NB[i]) + " " + str(EEL[i]) + " " + str(VDWAALS[i]) + " " + str(EELEC[i]) + "\n")
     a += 1
+f.close()
+
+fname11 = "EP_res.txt"
+f = open(fname11,"w")
+a = -180
+n = float(EPtot[0])
+for i in range(0,361):
+    f.write(str(a) + " " + str(float(EPtot[i]) - n) + "\n")
+    a += 1
+f.close()
