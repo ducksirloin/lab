@@ -8,6 +8,7 @@ fname6 = "1-4NB.txt"
 fname7 = "1-4EEL.txt"
 fname8 = "VDWAALS.txt"
 fname9 = "EELEC.txt"
+fname10 = "EGB.txt"
 f1 = open(fname1,"w")
 f2 = open(fname2,"w")
 f3 = open(fname3,"w")
@@ -17,8 +18,9 @@ f6 = open(fname6,"w")
 f7 = open(fname7,"w")
 f8 = open(fname8,"w")
 f9 = open(fname9,"w")
+f10 = open(fname10,"w")
 
-ang = [-180]*9
+ang = [-180]*10
 for f in open(fname,"r"):
     x = f.split()
     for i in range(len(x)):
@@ -49,6 +51,9 @@ for f in open(fname,"r"):
         elif x[i] == "EELEC":
             f9.write(str(ang[8]) + " " + str(x[i+2]) + "\n")
             ang[8] += 1
+        elif x[i] == "EGB":
+            f10.write(str(ang[9]) + " " + str(x[i+2]) + "\n")
+            ang[9] += 1
 
 f1.close()
 f2.close()
@@ -59,6 +64,7 @@ f6.close()
 f7.close()
 f8.close()
 f9.close()
+f10.close()
 
 Etot = []
 EPtot = []
@@ -69,6 +75,7 @@ NB = []
 EEL = []
 VDWAALS = []
 EELEC = []
+EGB = []
 
 for f in open(fname1,"r"):
     x = f.split()
@@ -97,18 +104,21 @@ for f in open(fname8,"r"):
 for f in open(fname9,"r"):
     x = f.split()
     EELEC.append(x[1])
+for f in open(fname10,"r"):
+    x = f.split()
+    EGB.append(x[1])
 
 a = -180
-fname10 = "all_result.txt"
-f = open(fname10,"w")
-f.write("dih  Etot    EPtot   BOND   ANGLE  DIHED   1-4NB  1-4EEL  VDWAALS  EELEC\n")
+fname11 = "all_result.txt"
+f = open(fname11,"w")
+f.write("dih  Etot    EPtot   BOND   ANGLE  DIHED   1-4NB  1-4EEL  VDWAALS  EELEC EGB\n")
 for i in range(0,361):
-    f.write(str(a) + " " + str(Etot[i]) + " " + str(EPtot[i]) + " " + str(BOND[i]) + " " + str(ANGLE[i]) + " " + str(DIHED[i]) + " " + str(NB[i]) + " " + str(EEL[i]) + " " + str(VDWAALS[i]) + " " + str(EELEC[i]) + "\n")
+    f.write(str(a) + " " + str(Etot[i]) + " " + str(EPtot[i]) + " " + str(BOND[i]) + " " + str(ANGLE[i]) + " " + str(DIHED[i]) + " " + str(NB[i]) + " " + str(EEL[i]) + " " + str(VDWAALS[i]) + " " + str(EELEC[i]) + " " + str(EGB[i]) + "\n")
     a += 1
 f.close()
 
-fname11 = "EP_res.txt"
-f = open(fname11,"w")
+fname12 = "EP_res.txt"
+f = open(fname12,"w")
 a = -180
 n = float(EPtot[0])
 for i in range(0,361):
