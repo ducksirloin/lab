@@ -20,3 +20,9 @@ f = open(fname3,"w")
 for i in range(361):
 	f.write("/home/biostr1/tnagai/programs/gromacs-4.6.1-d-mpi-deb/bin/grompp_mpi_d -f seed.mdp -c charmm" + str(i) + ".gro -p charmm"+ str(i) +".top -o charmm"+ str(i) +".tpr > logtpr"+ str(i) +".log\n")
 f.close()
+
+fname4 = "cmd_make_top_sh"
+f = open(fname4, "w")
+for i in range(361):
+	f.write("~/tnagai/programs/gromacs-4.6.1-d-mpi-deb/bin/pdb2gmx_mpi_d -f GLH" + str(i) + ".pdb -o charmm" + str(i) + ".gro -p charmm" + str(i) + ".top -ignh -ter\n")
+f.close()
