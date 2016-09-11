@@ -1,9 +1,11 @@
 fname1 = "strfile_Ac.txt"
 f = open(fname1,"w")
 a = -180
+f.write("source leaprc.gaff\n")
 for i in range(0,361):
-	f.write("set default PBradii mbondi2" + "\n")
-	f.write("str" + str(i) + " = sequence{ACE AcOH NME}" + "\n")
+	f.write("str" + str(i) + " = loadmol2 ACE.mol2\n")
+	f.write("check str" + str(i) + "\n")
+	f.write("mods = loadAmberParams ACE.frcmod\n")
 	f.write("impose str" + str(i) + " {1} {{OD1 CG OD2 HD2 " + str(a+i) + "}}" + "\n")
 	f.write("saveAmberParm str" + str(i) + "  confamb_Ac.prmtop confamb_Ac" + str(i) + ".inpcrd" + "\n")
 f.close()
