@@ -6,8 +6,8 @@ for i in range(0,361):
 	f.write("str" + str(i) + " = loadmol2 HCOOH.mol2\n")
 	f.write("check str" + str(i) + "\n")
 	f.write("mods = loadAmberParams HCOOH.frcmod\n")
-	f.write("impose str" + str(i) + " {1} {{OD1 CG OD2 HD2 " + str(a+i) + "}}" + "\n")
-	f.write("saveAmberParm str" + str(i) + "  confamb_FA.prmtop confamb_FA" + str(i) + ".inpcrd" + "\n")
+	f.write("impose str" + str(i) + " {1} {{OD1 CG OD2 HD2 " + str(a+i) + "}}\n")
+	f.write("saveAmberParm str" + str(i) + "  confamb_FA.prmtop confamb_FA" + str(i) + ".inpcrd\n")
 f.close()
 
 fname2 = "groupfile_FA.sh"
@@ -20,9 +20,9 @@ f.close()
 fname3 = "grep_FA.sh"
 f = open(fname3,"w")
 f.write("#!/bin/sh"+ "\n")
-f.write("grep -A4 -m1 NSTEP dih_ener_FA0.out > allout_FA.txt" + "\n")
+f.write("grep -A4 -m1 NSTEP dih_ener_FA0.out > allout_FA.txt\n")
 for i in range(1,361):
-	f.write("grep -A4 -m1 NSTEP dih_ener_FA" + str(i) + ".out >> allout_FA.txt" + "\n")
+	f.write("grep -A4 -m1 NSTEP dih_ener_FA" + str(i) + ".out >> allout_FA.txt\n")
 f.close()
 
 fname4 = "grep_FA_Gau.sh"
