@@ -17,5 +17,6 @@ for i in range(5):
             f.write("H1     "+str(round(float(x[3]), 3))+" "+str(round(float(x[4]), 3))+" "+str(round(float(x[5]), 3))+"  \n")
         elif n == 4:
             f.write("H2     "+str(round(float(x[0]), 3))+" "+str(round(float(x[1]), 3))+" "+str(round(float(x[2]), 3))+"  \n\n")
+        if n == 4 and i < 4:
             f.write("--Link1--\n")
         n += 1
