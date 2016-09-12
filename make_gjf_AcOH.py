@@ -20,6 +20,7 @@ for i in range(361):
         elif n == 5:
             f.write("H3     "+str(x[0])+" "+str(x[1])+" "+str(x[2])+"  \n")
             f.write("H4     "+str(x[3])+" "+str(x[4])+" "+str(x[5])+"  \n\n")
+        if n == 5 and i < 360:
             f.write("--Link1--\n")
         n += 1
 f.close()
