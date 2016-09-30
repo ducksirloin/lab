@@ -14,10 +14,12 @@ for f in open(fname2, "r"):
 
 a = -180
 f = open(fname3, "w")
-f.write("dihed     nuclear     SCF     sum     kcal/mol\n")
-for i in range(361):
+f.write("dihed     nuclear     SCF     sum     kcal/mol     nuclear*627     SCF*627\n")
+for i in range(37):
     s = float(nuc[i]) + float(SCF[i])
     kcal = s *  627.5095
-    f.write(str(a) + " " + str(nuc[i]) + " " + str(SCF[i]) + " " + str(s) + " " + str(kcal) + "\n")
-    a += 1
+    nu = float(nuc[i]) * 627.5095
+    sc = float(SCF[i]) * 627.5095
+    f.write(str(a) + " " + str(nuc[i]) + " " + str(SCF[i]) + " " + str(s) + " " + str(kcal) + " " + str(nu) + " " + str(sc) + "\n")
+    a += 10
 f.close()
