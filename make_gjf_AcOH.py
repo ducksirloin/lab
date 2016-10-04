@@ -1,11 +1,12 @@
-fname1 = "AcOH_dih.gjf"
+# -*- coding: utf-8 -*-
+fname1 = "AcOH_dih_ff14ipq.gjf"
 f = open(fname1,"w")
 f.write("%mem=130MW\n")
-f.write("%Chk=C:\usr\n")
+f.write("%Chk=C:\Doccuments and Settings\デスクトップ\n")
 for i in range(37):
     fname = "confamb_Ac" + str(i * 10) + ".inpcrd"
     n = 0
-    f.write("#T HF/6-311G Test\n\nCOOH\n\n0 1\n")
+    f.write("#T MP2/cc-pVTZ Test\n\nCOOH\n\n0 1\n")
     for f1 in open(fname,"r"):
         x = f1.split()
         if n == 2:
