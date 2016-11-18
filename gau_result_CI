@@ -1,0 +1,13 @@
+fname1 = "AcOH_CISD.txt"
+fname2 = "result_Ac_CI.txt"
+
+f = open(fname2, "w")
+f.write("dihed     CI     kcal/mol\n")
+
+a = -180
+for fx in open(fname1, "r"):
+    y = fx.split("|")
+    x = y[1].split("=")
+    kcal = float(x[1]) * 627.5095
+    f.write(str(a) + " " + str(x[1]) + " " + str(kcal) + "\n")
+    a += 10

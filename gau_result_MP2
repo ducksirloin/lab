@@ -1,0 +1,9 @@
+fname1 = "AcOH_MP2.txt"
+fname2 = "result_Ac_MP2.txt"
+
+for f in open(fname1, "r"):
+    x = f.split("|")
+    
+
+f = opne(fname2, "w")
+f.write("dihed     MP2     kcal/mol\n")
